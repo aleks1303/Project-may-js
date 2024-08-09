@@ -143,6 +143,148 @@ console.log(days[0].day6.afternoon)
 
 // -------------------------
 
+let x = 23;
+if (x === 0) {
+    console.log(true)
+} else  {
+    console.log(false)
+}
+
+let a = -3;
+if (a === 1){
+    console.log(1)
+}
+else if (a === 0){
+    console.log(0)
+}
+else if (a === -3) {
+    console.log(-3)
+}
+else(console.log('none'))
+
+// --------------------
+
+let time = 33;
+if (time >=0 && time < 14){
+    console.log(1)
+}
+else if (time >15 && time < 29){
+    console.log(2)
+}
+else if (time > 30 && time < 44){
+    console.log(3)
+}
+else if (time > 45 && time < 59){
+    console.log(4)
+}
+else{
+    console.log('different time')
+}
+
+// ------------------------
+
+let day = 15;
+if (day >=1 && day < 10){
+    console.log('first decade')
+}
+else if (day >= 11 && day < 20){
+    console.log('second decade')
+}
+else if (day >= 21 && day < 31){
+    console.log('last decade')
+}
+else{
+    console.log('error')
+}
+
+// --------------------------------
+
+let week = 5;
+switch (week){
+    case 1:
+        console.log('learn english word - "sunday"')
+        break;
+    case 2:
+        console.log('learn english word - "monday"')
+        break;
+    case 3:
+        console.log('learn english word - "tuesday"')
+        break;
+    case 4:
+        console.log('learn english word - "wednesday"')
+        break;
+    case 5:
+        console.log('learn english word - "thursday"')
+        break;
+    case 6:
+        console.log('learn english word - "friday"')
+        break;
+    case 7:
+        console.log('learn english word - "saturday"')
+        break;
+}
+
+// ----------------------------
+
+let g = 14;
+let q = 14;
+
+if (g > q){
+    console.log(g)
+}
+else if (g < q){
+    console.log(q)
+}
+else if (g === q){
+    console.log('the same')
+}
+else{
+    console.log(undefined)
+}
+
+// // --------------------------------
+//
+// let xx;
+// prompt('???')
+// if (xx === '23'){
+//     console.log(22)
+// }
+// else{
+//     console.log('default')
+// }
+
+// ---------------------------------------
+
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+if (coursesAndDurationArray[0].monthDuration > 5){
+    console.log('super')
+}
+if (coursesAndDurationArray[1].monthDuration > 5){
+    console.log('super')
+}
+if (coursesAndDurationArray[2].monthDuration > 5){
+    console.log('super')
+}
+if (coursesAndDurationArray[3].monthDuration > 5){
+    console.log('super')
+}
+if (coursesAndDurationArray[4].monthDuration > 5){
+    console.log('super')
+}
+if (coursesAndDurationArray[5].monthDuration > 5){
+    console.log('super')
+}
+
+
+
+
 
 
 
