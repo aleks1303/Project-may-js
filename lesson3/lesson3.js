@@ -7,7 +7,7 @@ for (let i = 1; i <= 10; i++){
 }
 
 for (let a = 1; a <= 10; a++){
-    document.write('<div>Word '+ a +'</div>')
+    document.write(`<div>Word ${a}</div>`)
 }
 
 // ---------------while---------------
@@ -20,7 +20,7 @@ while (b <= 20) {
 
 let c = 1;
 while (c <= 20) {
-    document.write('<h1>the words what we hear '+ c +'</h1>');
+    document.write(`<h1>the words what we hear ${c}</h1>`);
     c++
 }
 
@@ -29,7 +29,7 @@ while (c <= 20) {
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 document.write('<ul>')
 for (let list = 0; list <= listOfItems.length; list++ ){
-    document.write('<li>'+ listOfItems[list] +'</li>');
+    document.write(`<li>${listOfItems[list]}</li>`);
 }
 document.write('</ul>')
 
