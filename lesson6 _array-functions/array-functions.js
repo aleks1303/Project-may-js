@@ -91,6 +91,7 @@ let nums = [11,21,3]
 console.log(sortNums(nums,'ascending'));
 
 
+
 // ==========================
 // #yo06d74c1C
 // - є масив
