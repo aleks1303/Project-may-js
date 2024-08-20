@@ -95,25 +95,26 @@ console.log(sortNums(nums,'ascending'));
 // ==========================
 // #yo06d74c1C
 // - є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
 // -- відсортувати його за спаданням за monthDuration
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 // =========================
-
-
-
-
-
-
-
+ const coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+const sortFilterMap = coursesAndDurationArray
+    .sort((a, b) =>b.monthDuration - a.monthDuration)
+.filter(value => value.monthDuration > 5)
+    .map((value, index) => {
+        value.id = index + 1
+        return value
+    })
+console.log(sortFilterMap)
 
 
 //     #bolvdlhP
@@ -132,24 +133,57 @@ console.log(sortNums(nums,'ascending'));
 //
 // =========================
 
+const cardSuit = ['spade', 'diamond','heart', 'clubs'];
+const values = ['6', '7', '8', '9', '10', 'ace','jack','queen','king']
 
-
-
-
-
-
+const cards = [];
+for (const suit     of cardSuit) {
+    for (const value of values) {
+        const card = {suits:suit, value:value}
+        if(suit === 'heart' || suit === 'diamond'){
+        card.color = 'red'
+        } else card.color = 'black'
+        cards.push(card)
+    }
+}
+console.log(cards)
+console.log(cards.find(card => card.suits === 'spade' && card.value === 'ace'));
+console.log(cards.filter(card => card.value === '6'));
+console.log(cards.filter(card => card.color === 'red'));
+console.log(cards.filter(card => card.suits === 'diamond'));
+console.log(cards.filter(card => card.suits === 'clubs' && card.value !== '6' && card.value !== '7' && card.value !== '8'));
 
 // #EP5I1UUzAX
 // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
 // {
 //     spades:[],
-//         diamonds:[],
+//     diamonds:[],
 //     hearts:[],
 //     clubs:[]
 // }
 // =========================
+const reduce = cards.reduce((previousValue, currentValue) => {
+    if(currentValue.suits){
+        previousValue.spades.push(currentValue)
+    }
+    if(currentValue.suits === 'diamond'){
+        previousValue.diamonds.push(currentValue)
+    }
+    if (currentValue.suits === 'heart'){
+        previousValue.hearts.push(currentValue)
+    }
+    if (currentValue.suits === 'clubs'){
+        previousValue.clubs.push(currentValue)
+    }
+    return previousValue
+}, {
+    spades:[],
+    diamonds:[],
+    hearts:[],
+    clubs:[]
+});
 
-
+console.log(reduce)
 
 
 
@@ -157,3 +191,83 @@ console.log(sortNums(nums,'ascending'));
 // взяти з arrays.js масив coursesArray
 // --написати пошук всіх об'єктів, в яких в modules є sass
 // --написати пошук всіх об'єктів, в яких в modules є docker
+
+
+
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+console.log(coursesArray.filter(value => {
+    return value.modules.includes('sass')
+}))
+console.log(coursesArray.filter(value => {
+    return value.modules.includes('docker')
+}))
+
+
