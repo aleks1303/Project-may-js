@@ -125,46 +125,50 @@ console.log(sortClient)
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-function Car (mode, producer, year, maxSpeed, engineVolume){
 
-    this.mode = mode;
-    this.producer = producer;
-    this.year = year;
-    this.maxSpeed = maxSpeed;
-    this.engineVolume = engineVolume;
-    this.drive = function (){
-        console.log(`їдемо зі швидкістю ${maxSpeed} на годину`);
-    }
-    this.info = function (){
-        for (const key in this) {
-            console.log(key, this[key])
-        }
 
-    }
-    this.increaseMaxSpeed = function (newSpeed){
-        if(newSpeed > 0)
-        this.maxSpeed = this.maxSpeed + newSpeed
-    }
-    this.changeYear = function (newYear){
-        if(newYear > 1815)
-        this.year = newYear;
-    }
-    this.addDriver = function (driver){
-        if(driver) this.driver = driver
 
-    }
-}
-const car = new Car('Citroen', 'French', '2007', 160, 1.6,
-)
+// function Car (mode, producer, year, maxSpeed, engineVolume){
+//
+//     this.mode = mode;
+//     this.producer = producer;
+//     this.year = year;
+//     this.maxSpeed = maxSpeed;
+//     this.engineVolume = engineVolume;
+//     this.drive = function (){
+//         console.log(`їдемо зі швидкістю ${maxSpeed} на годину`);
+//     }
+//     this.info = function (){
+//         for (const key in this) {
+//             console.log(key, this[key])
+//         }
+//
+//     }
+//     this.increaseMaxSpeed = function (newSpeed){
+//         if(newSpeed > 0)
+//         this.maxSpeed = this.maxSpeed + newSpeed
+//     }
+//     this.changeYear = function (newYear){
+//         if(newYear > 1815)
+//         this.year = newYear;
+//     }
+//     this.addDriver = function (driver){
+//         if(driver) this.driver = driver
+//
+//     }
+// }
+// const car = new Car('Citroen', 'French', '2007', 160, 1.6,
+// )
+//
+// console.log(car)
+// car.drive()
+// car.info()
+// car.increaseMaxSpeed(20)
+// console.log(car)
+// car.changeYear(2009)
+// console.log(car)
+// car.addDriver('Super')
 
-console.log(car)
-car.drive()
-car.info()
-car.increaseMaxSpeed(20)
-console.log(car)
-car.changeYear(2009)
-console.log(car)
-car.addDriver('Super')
 
 
 
@@ -178,16 +182,49 @@ car.addDriver('Super')
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
+class Car{
+    constructor(mode, producer, year, maxSpeed, engineVolume ) {
+        this.mode = mode;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this. engineVolume = engineVolume;
+    }
+    drive (){
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`)
+    }
+    info(){
+        for (const key in this) {
+            console.log(key, this[key])
+        }
+    }
+    increaseMaxSpeed (newSpeed) {
+        if(newSpeed > 0){
+            this.maxSpeed = this.maxSpeed + newSpeed
+        }
+    }
+    changeYear(newValue){
+        if(newValue > 1815){
+            this.year = newValue
+        }
+    }
+    addDriver (driver){
+        if(driver) {driver = this.driver = driver
+        }
+    }
 
+}
+const car = new Car ('Skoda','the Czech Republic', 2015, 220, 1.9)
 
+console.log(car)
 
-
-
-
-
-
-
-
+car.drive()
+car.info()
+car.increaseMaxSpeed(10)
+console.log(car)
+car.changeYear(2017)
+console.log(car)
+car.addDriver('experienced')
 
 // #zg6Fifnqig
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
@@ -195,16 +232,48 @@ car.addDriver('Super')
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
+class Cinderella{
+    constructor(name, age, footsize) {
+        this.name = name;
+        this.age = age;
+        this.footsize = footsize;
+    }
+}
+const arrCinderella = [
+    new Cinderella('Cinderella1', 23, 36),
+    new Cinderella('Cinderella2', 21, 35),
+    new Cinderella('Cinderella3', 24, 33),
+    new Cinderella('Cinderella4', 60, 34),
+    new Cinderella('Cinderella5', 45, 40),
+    new Cinderella('Cinderella6', 18, 36),
+    new Cinderella('Cinderella7', 22, 37),
+    new Cinderella('Cinderella8', 25, 35),
+    new Cinderella('Cinderella9', 56, 38),
+    new Cinderella('Cinderella0', 20, 39),
+]
 
+class prince{
 
+    constructor(name, age, shoe) {
+        this.name = name;
+        this.age = age;
+        this.shoe = shoe;
+    }
+}
+const princeOfCinderella = new prince('Tomas', 25, 36)
 
+for (const cinderella of arrCinderella) {
+    if(cinderella.footsize === princeOfCinderella.shoe && cinderella.age === 18){
+        prince.wife = cinderella
+        console.log(prince.wife)
 
+    }
+}
+console.log(princeOfCinderella)
 
-
-
-
-
-
+const cinderellaWife = arrCinderella.find(cinderella => cinderella.footsize === princeOfCinderella.shoe && cinderella.age === 18)
+    console.log(cinderellaWife)
 
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
+
