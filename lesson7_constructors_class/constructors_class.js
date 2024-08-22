@@ -277,3 +277,26 @@ const cinderellaWife = arrCinderella.find(cinderella => cinderella.footsize === 
 // #gsKLAsNWM
 // *Через Array.prototype. створити власний foreach, filter
 
+Array.prototype.myForEach = function (callback){
+    let arrYour = this
+    for (const item of arrYour) {
+        callback(item)
+    }
+};
+ ['Cinderella', 'Prince', 18, 36].myForEach((a) => console.log(a));
+ ['Prince', 25, 36 ].myForEach((b) => console.log(b))
+
+
+
+
+Array.prototype.myFilter = function (callback){
+     let arrFilter = []
+    for (const item of this) {
+    if(callback(item)){
+        arrFilter.push(item)
+    }
+    }
+    return arrFilter
+}
+let wifePrince = arrCinderella.myFilter((cinderella) => (cinderella.age === 18 && cinderella.footsize === 36))
+console.log(wifePrince)
