@@ -1,0 +1,23 @@
+.wrap{
+    width: 300px;
+    height: 200px;
+    background-color: #334343;
+}
+.collapse{
+    margin-bottom: 30px;
+}
+.alpha{
+    margin-left: 30px;
+}
+.beta{
+    transform: rotate(-60deg);
+}
+.small{
+    width: 300px;
+    height: 100px;
+    background-color: red;
+}
+
+
+
+
