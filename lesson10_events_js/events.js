@@ -14,10 +14,21 @@ buttonReturn.onclick = function (){
 // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
 //
 
+const age = document.getElementById('age');
+const buttonAge = document.getElementById('button1');
+const p = document.getElementById('p')
+buttonAge.onclick = function (ev){
+    p.innerText = ''
+    if(age.value < 18){
+    p.innerText = 'You have not 18 old year'}
+    else if(age.value >= 18){
+        p.innerText = 'You have 18 old year'
+    }
+    else{
+        p.innerText = 'Not found'
+    }
 
-
-
-
+}
 
 // #ymAmN2xJ
 // Стоврити форму з трьома полями для name,surname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
